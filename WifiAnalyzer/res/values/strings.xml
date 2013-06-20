@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Wifi Analyzer</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="teste">teste</string>
+    <string name="teste2">teste2</string>
+    <string name="teste3">teste3</string>
+    <string name="strength">strength</string>
+    <string name="radar">radar</string>
+    <string name="info">info</string>
+
+</resources>
