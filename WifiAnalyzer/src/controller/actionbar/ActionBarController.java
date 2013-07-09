@@ -12,7 +12,7 @@ import controller.fragments.WifiRadarFragment;
 
 public class ActionBarController {
 	ActionBar bar;
-	TabAdapter tabAdapter;
+	TabAdapter tabAdapter;//adapt
 	Resources resources;
 	ActionBar.Tab[] tabs;
 	String[] tags;
