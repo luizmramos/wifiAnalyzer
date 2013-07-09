@@ -11,7 +11,7 @@ import controller.fragments.SignalStrengthFragment;
 import controller.fragments.WifiRadarFragment;
 
 public class ActionBarController {
-	ActionBar bar;
+	ActionBar bar; //actionbar
 	TabAdapter tabAdapter;
 	Resources resources;
 	ActionBar.Tab[] tabs;
