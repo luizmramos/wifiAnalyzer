@@ -24,12 +24,19 @@ public class MainActivity extends SherlockFragmentActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity__main);
 		Log.d("MyDebug","Creating MainActivity!");
-		WifiManager wifi = (WifiManager) getSystemService(Context.WIFI_SERVICE);
-		if(wifi.isWifiEnabled()==false){
-			new WifiNotEnabledDialog().show(getSupportFragmentManager(),getString(R.string.wifiNotEnabledTag));
-		}
+		
 	}
-
+	@Override
+	public void onWindowFocusChanged(boolean hasFocus) {
+		if(hasFocus){
+			WifiManager wifi = (WifiManager) getSystemService(Context.WIFI_SERVICE);
+			if(wifi.isWifiEnabled()==false){
+				new WifiNotEnabledDialog().show(getSupportFragmentManager(),getString(R.string.wifiNotEnabledTag));
+			}
+		}
+		super.onWindowFocusChanged(hasFocus);
+	}
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.

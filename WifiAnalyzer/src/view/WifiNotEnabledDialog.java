@@ -1,14 +1,13 @@
 package view;
 
-import com.actionbarsherlock.app.SherlockDialogFragment;
-import com.appspot.wifianalyzerapp.R;
-
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+
+import com.actionbarsherlock.app.SherlockDialogFragment;
+import com.appspot.wifianalyzerapp.R;
 
 public class WifiNotEnabledDialog extends SherlockDialogFragment {
     @Override

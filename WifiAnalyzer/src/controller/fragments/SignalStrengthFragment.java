@@ -1,7 +1,6 @@
 package controller.fragments;
 
 import android.content.Context;
-import android.net.wifi.WifiConfiguration;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -11,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.actionbarsherlock.app.SherlockDialogFragment;
 import com.appspot.wifianalyzerapp.R;
 
 public class SignalStrengthFragment extends Fragment{
@@ -27,10 +27,6 @@ public class SignalStrengthFragment extends Fragment{
 	public void onActivityCreated(Bundle savedInstanceState) {
 		TextView tv = (TextView)getActivity().findViewById(R.id.editText1);
 		tv.setText("test");
-		WifiManager wifi = (WifiManager) getActivity().getSystemService(Context.WIFI_SERVICE);
-		if(wifi.isWifiEnabled()==false){
-			
-		}
 		super.onActivityCreated(savedInstanceState);
 	}
 }
