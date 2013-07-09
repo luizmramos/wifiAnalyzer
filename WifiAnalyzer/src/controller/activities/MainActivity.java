@@ -1,6 +1,10 @@
 package controller.activities;
 
+import view.WifiNotEnabledDialog;
+import android.content.Context;
+import android.net.wifi.WifiManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 
 import com.actionbarsherlock.app.SherlockFragmentActivity;
@@ -19,6 +23,11 @@ public class MainActivity extends SherlockFragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity__main);
+		Log.d("MyDebug","Creating MainActivity!");
+		WifiManager wifi = (WifiManager) getSystemService(Context.WIFI_SERVICE);
+		if(wifi.isWifiEnabled()==false){
+			new WifiNotEnabledDialog().show(getSupportFragmentManager(),getString(R.string.wifiNotEnabledTag));
+		}
 	}
 
 	@Override

@@ -10,5 +10,8 @@
     <string name="strength">strength</string>
     <string name="radar">radar</string>
     <string name="info">info</string>
+    <string name="ok">Ok</string>
+    <string name="wifiNotEnabledMessage">Wifi is not enabled.</string>
+    <string name="wifiNotEnabledTag">wifiNotEnabledTag</string>
 
 </resources>
