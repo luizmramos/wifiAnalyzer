@@ -30,4 +30,11 @@
 		<nature>com.android.ide.eclipse.adt.AndroidNature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>libs/androidplot-core-0.5.2.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/workspaceAndroid/WifiAnalyzer/libs/androidplot-core-0.5.2.jar</locationURI>
+		</link>
+	</linkedResources>
 </projectDescription>

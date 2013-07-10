@@ -1,7 +1,5 @@
 package controller.fragments;
 
-import android.content.Context;
-import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -10,10 +8,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.actionbarsherlock.app.SherlockDialogFragment;
 import com.appspot.wifianalyzerapp.R;
 
+import controller.threads.GraphUpdater;
+
 public class SignalStrengthFragment extends Fragment{
+	
+
+	GraphUpdater graphUpdater;
+	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -25,8 +28,35 @@ public class SignalStrengthFragment extends Fragment{
 	}
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
-		TextView tv = (TextView)getActivity().findViewById(R.id.editText1);
-		tv.setText("test");
 		super.onActivityCreated(savedInstanceState);
+	}
+	@Override
+	public void onResume() {
+		if(graphUpdater!=null){
+			graphUpdater.interrupt();
+			Log.d("graph", "InterruptR");
+		}
+		
+		graphUpdater = new GraphUpdater(getActivity());
+		graphUpdater.start();
+		super.onResume();
+	}
+	@Override
+	public void onPause() {
+		if(graphUpdater!=null){
+			graphUpdater.interrupt();
+			graphUpdater=null;
+			Log.d("graph", "InterruptP");
+		}
+		super.onPause();
+	}
+	@Override
+	public void onDestroy() {
+		if(graphUpdater!=null){
+			graphUpdater.interrupt();
+			graphUpdater=null;
+			Log.d("graph", "InterruptD");
+		}
+		super.onDestroy();
 	}
 }
