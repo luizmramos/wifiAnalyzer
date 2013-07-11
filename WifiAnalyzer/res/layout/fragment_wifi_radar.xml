@@ -8,9 +8,51 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
 
-    <TextView
+    <LinearLayout
+        android:layout_marginTop="40dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/teste2" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/radarLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:orientation="vertical" >
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:baselineAligned="false"
+        android:fitsSystemWindows="false"
+        android:gravity="center_vertical"
+        android:measureWithLargestChild="false"
+        android:orientation="vertical" >
+    </RelativeLayout>
+
+    <ToggleButton
+        android:id="@+id/sound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/relativeLayout1"
+        android:layout_centerHorizontal="true"
+        android:text="Sound" />
+
+    <Spinner
+        android:id="@+id/wifiDropDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/sound"
+
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp" />
 
 </RelativeLayout>
